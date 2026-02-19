@@ -1,0 +1,12 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+}
+.Dark-Scroll::-webkit-scrollbar-thumb{
+    background: #8a2be2;
+}
+.Light-Scroll::-webkit-scrollbar-thumb{
+    background-color: #68a3eb;
+}

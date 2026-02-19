@@ -5,6 +5,7 @@ import { Link as ReactRouterLink } from "react-router-dom";
 import { LightDarkModeContext } from "../Context/LightDarkMode/LightDarkMode";
 import { Langs } from "../Context/Langs/Langs";
 import { useTranslation } from "react-i18next";
+
 export default function MenuBarPhone()
 {
     // eslint-disable-next-line no-unused-vars
@@ -16,7 +17,7 @@ export default function MenuBarPhone()
 
     const {SetLang,LangName,} = useContext(Langs)
     return (
-        <Stack flexDirection="column">
+        <Stack flexDirection="column" className={DarkOrLight ? "Dark-Scroll" : "Light-Scroll"}>
                     <Stack color={{color:DarkOrLight ? "#FFF" : "#000",}} height="7vh">
                     <Menu onClick={() => {
                         SetShowTheMenuElement(!ShowTheMenuElement)
@@ -74,7 +75,7 @@ export default function MenuBarPhone()
                             padding:"10px",
                             flexDirection:"column",
                             gap:"10px",
-                            background:DarkOrLight ? "#0b67ab" : "#FFF",
+                            background:DarkOrLight ? "#0f0f0f" : "#FFF",
                             width:"fit-content",
                             height:"20vh",
                         }}>
@@ -85,7 +86,7 @@ export default function MenuBarPhone()
                                     width:"100%",
                                     color:DarkOrLight ? "#FFF" : "#000",
                                     ":hover":{
-                                        background:DarkOrLight ? "#0b67ab" : "#EEE",
+                                        background:DarkOrLight ? "#0f0f0f" : "#EEE",
                                         color:DarkOrLight ? "#EEE" : "#AA2626 !important"
                                     },
                                 }}>
@@ -99,7 +100,7 @@ export default function MenuBarPhone()
                                     width:"100%",
                                     color:DarkOrLight ? "#FFF" : "#000",
                                     ":hover":{
-                                        background:DarkOrLight ? "#0b67ab" : "#EEE",
+                                        background:DarkOrLight ? "#0f0f0f" : "#EEE",
                                         color:DarkOrLight ? "#EEE" : "#AA2626 !important"
                                     },
                                 }}>
@@ -113,7 +114,7 @@ export default function MenuBarPhone()
                                     width:"100%",
                                     color:DarkOrLight ? "#FFF !important" : "#000 !important",
                                     ":hover":{
-                                        background:DarkOrLight ? "#0b67ab" : "#EEE",
+                                        background:DarkOrLight ? "#0f0f0f" : "#EEE",
                                         color:DarkOrLight ? "#EEE" : "#AA2626 !important"
                                     },
                                 }}>

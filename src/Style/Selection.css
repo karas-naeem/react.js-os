@@ -1,0 +1,9 @@
+::selection{
+    color: #FFF;
+}
+.Dark-Selection::selection{
+    background-color: #8a2be2;
+}
+.Light-Selection::selection{
+    background-color: #68a3eb;
+}

@@ -11,6 +11,9 @@ import { LightTheme } from './Themes/Mui/light';
 import { useTranslation } from 'react-i18next';
 import HomePage from './Components/HomePage';
 import { ResponsiveContext } from './Context/Responsive/ResponsiveContext';
+import "./Style/Selection.css"
+
+
 function App() {
 
   
@@ -54,10 +57,11 @@ function App() {
           i18n.changeLanguage(lang);
           localStorage.setItem("lang",lang);
         },[lang,i18n]);
-        //Responsive
-        const isTablet = useMediaQuery("(min-width:768px)");
-        const isLaptop = useMediaQuery("(min-width:1024px)")
+      //Responsive
+      const isTablet = useMediaQuery("(min-width:768px)");
+      const isLaptop = useMediaQuery("(min-width:1024px)");
   return (
+
     <LightDarkModeContext.Provider value={{
       Theme,
       DarkOrLight,
@@ -71,17 +75,19 @@ function App() {
           isTablet,
           isLaptop
         }}>          
-          <div className="App" style={{
+          <div className={
+            DarkOrLight ? "App Dark-Selection" : "App Light-Selection"
+          }  style={{
             background:DarkOrLight ? "#0f0f0f" : "#fff",
             direction:localStorage.getItem("lang") === "ar" || "fa" ? "rtl" : "ltr"
-            }}>
+          }} >
             <MainBar/>
             <Routes>
               <Route path="/" element={<HomePage/>}/>
               <Route path='/signup' element={<SignUp/>}/>
               <Route path='/login' element={<>login</>}/>
             </Routes>
-          </div>
+           </div>
         </ResponsiveContext.Provider>
       </Langs.Provider>
     </LightDarkModeContext.Provider>

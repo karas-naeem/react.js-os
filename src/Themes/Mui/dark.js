@@ -7,7 +7,7 @@ export const DarkTheme = createTheme({
                     width:"100vw",
                     height:"8.5vh",
                     padding:"1vh",
-                    background:"#0b67ab",
+                    background:"#0f0f0f"
                 },
             }, 
         },
