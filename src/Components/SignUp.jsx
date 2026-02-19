@@ -158,7 +158,7 @@ export default function SignUp()
                         width:"42.5vw",
                     }}>
                         <p style={{
-                            fontSize:isLaptop ? "35px" : isTablet ? "25px" : "1.25rem",
+                            fontSize:isLaptop ? "35px" : "25px",
                             fontWeight:"bold"
                         }}>
                             {t('sign up')}
