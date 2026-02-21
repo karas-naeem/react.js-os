@@ -6,5 +6,7 @@
     "e-mail":"电子邮件",
     "password":"密码",
     "create a new account":"创建一个新帐户",
-    "sign up with google":"与谷歌注册"
+    "sign up with google":"与谷歌注册",
+    "sign up with github":"使用gitHub注册",
+    "sign up with react.js os":"注册 react.js 操作系统"
 }

@@ -4,5 +4,7 @@
     "log in":"einloggen",
     "password":"passwort",
     "create a new account":"erstellen sie ein neues konto",
-    "sign up with google":"melde dich bei google an"
+    "sign up with google":"melde dich bei google an",
+    "sign up with github":"melde dich bei github an",
+    "sign up with react.js os":"meld je aan bij react.js os"
 }

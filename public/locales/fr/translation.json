@@ -5,5 +5,7 @@
     "name":"nom",
     "password":"mot de passe",
     "create a new account":"créer un nouveau compte",
-    "sign up with google":"Inscrivez-vous avec Google"
+    "sign up with google":"inscrivez-vous avec google",
+    "sign up with github":"inscrivez-vous sur gitHub",
+    "sign up with react.js os":"inscrivez-vous avec react.js os"
 }

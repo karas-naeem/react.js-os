@@ -6,5 +6,7 @@
     "e-mail":"электронная почта",
     "password":"пароль",
     "create a new account":"Создать новую учетную запись",
-    "sign up with google":"Зарегистрируйтесь через Google"
+    "sign up with google":"Зарегистрируйтесь через google",
+    "sign up with github":"Зарегистрироваться через github",
+    "sign up with react.js os":"зарегистрируйтесь с помощью react.js os"
 }

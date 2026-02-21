@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { LightDarkModeContext } from "../Context/LightDarkMode/LightDarkMode";
 import '../Style/Scroll.css';
-import '../Style/Selection.css'
 
 export default function SignUpPhone()
 {
@@ -30,7 +29,9 @@ export default function SignUpPhone()
                         margin:"10%",
                         fontSize:"175%",
                     }}>
-                        sign up with react.js os
+                        {
+                            t("sign up with react.js os")
+                        }
                     </div>
                     <div style={{
                         width:"90%",
