@@ -1,20 +1,30 @@
 import {  Button,InputLabel, Stack, TextField } from "@mui/material";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { LightDarkModeContext } from "../Context/LightDarkMode/LightDarkMode";
 import '../Style/Scroll.css';
+import { useDispatch } from "react-redux";
+import { CreateAccount } from "../Data/Accounts/account";
+import { auth } from "../firebase";
 
 export default function SignUpPhone()
 {
-    //Languages
+    // Languages
     // eslint-disable-next-line 
     const [t,i18n] = useTranslation();
-    
-    //Dark & Light Mode
+
+    // Dark & Light Mode
 
     const {DarkOrLight} = useContext(LightDarkModeContext);
 
+    // Create A Account
 
+    const [AccountData,SetAccountData] = useState({
+        name:"",
+        email:"",
+        password:""
+    });
+    const dispatch = useDispatch();
         return (
 
             <>
@@ -37,6 +47,7 @@ export default function SignUpPhone()
                     </div>
                     <div style={{
                         width:"90%",
+                        height:"100vh",
                         borderRadius:"5px",
                         background:DarkOrLight ? "#0f0f0f" : "#fff",
                     }}>
@@ -49,7 +60,17 @@ export default function SignUpPhone()
                                 width:"80%",
                                 background:DarkOrLight ?  "#8a2be2" : "#68a3eb",
                                 borderRadius:"5px",
-                            }}  color={DarkOrLight ? "secondary" : "primary" } placeholder={t("name")} label="name"/>
+                            }}  
+                            color={DarkOrLight ? "secondary" : "primary" } 
+                            placeholder={t("name")} 
+                            label="name"
+                            value={AccountData.name}
+                            onChange={
+                                e => {
+                                    SetAccountData({...AccountData,name:e.target.value})
+                                }
+                            }
+                            />
                         </div>
                          <div>
                             <InputLabel id="e-mail" sx={{
@@ -59,8 +80,16 @@ export default function SignUpPhone()
                                         width:"80%",
                                         background:DarkOrLight ?  "#8a2be2" : "#68a3eb",
                                         borderRadius:"5px",
-                                    }}  color={DarkOrLight ? "secondary" : "primary" } placeholder={t("e-mail")} type="email" label="e-mail" onChange={() => {        
-                                }}/>
+                                    }}  color={DarkOrLight ? "secondary" : "primary" }
+                                     placeholder={t("e-mail")} 
+                                     type="email" 
+                                     label="e-mail" 
+                                     value={AccountData.email}
+                                     onChange={
+                                     e => {
+                                        SetAccountData({...AccountData,email:e.target.value})
+                                     }
+                                }/>
                             </div>
                             <div>
                                 <InputLabel id="password" sx={{
@@ -70,8 +99,16 @@ export default function SignUpPhone()
                                     width:"80%",
                                     background:DarkOrLight ?  "#8a2be2" : "#68a3eb",
                                     borderRadius:"5px",
-                                  }} color={DarkOrLight ? "secondary" : "primary" } placeholder={t("password")} type="password" label="password" onChange={() => {        
-                                }}/>
+                                  }} c
+                                  olor={DarkOrLight ? "secondary" : "primary" } 
+                                  placeholder={t("password")} type="password" 
+                                  label="password"                             
+                                  value={AccountData.password}
+                                  onChange={
+                                      e => {
+                                        SetAccountData({...AccountData,password:e.target.value})
+                                  }
+                            }/>
                             </div>
                             <div style={{
                                 padding:"5%"
@@ -84,6 +121,13 @@ export default function SignUpPhone()
                                     fontSize:"0.6rem",
                                     outline:"none",
                                     background:DarkOrLight ? "#8a2be2" : "#68a3eb"
+                                }} onClick={() => {
+                                    dispatch(CreateAccount({
+                                        auth,
+                                        name:AccountData.name,
+                                        email:AccountData.email,
+                                        password:AccountData.password
+                                    }))
                                 }}/>
                             </div>
                             <div style={{

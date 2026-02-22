@@ -1,11 +1,14 @@
 import { Button, InputLabel, Stack, TextField } from "@mui/material";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ResponsiveContext } from "../Context/Responsive/ResponsiveContext";
 import { LightDarkModeContext } from "../Context/LightDarkMode/LightDarkMode";
 import '../Style/Scroll.css';
 import '../Style/Selection.css'
 import SignUpPhone from "./SignUpPhone.jsx";
+import { auth } from "../firebase.js";
+import { CreateAccount } from "../Data/Accounts/account.js";
+import { useDispatch } from "react-redux";
 
 export default function SignUp()
 {
@@ -19,6 +22,15 @@ export default function SignUp()
 
     // Responsive
     const {isTablet,isLaptop} = useContext(ResponsiveContext);
+
+    // Create A Account
+
+    const [AccountData,SetAccountData] = useState({
+        name:"",
+        email:"",
+        password:""
+    });
+    const dispatch = useDispatch();
 
     return (
         <>
@@ -71,7 +83,16 @@ export default function SignUp()
                         <TextField sx={{
                             background:DarkOrLight ?  "#8a2be2" : "#68a3eb",
                             borderRadius:"5px",
-                        }}  color={DarkOrLight ? "secondary" : "primary" } placeholder={t("name")} label="name"/>
+                        }}  color={DarkOrLight ? "secondary" : "primary" }
+                        placeholder={t("name")} 
+                        label="name"
+                        value={AccountData.name}
+                        onChange={
+                            e => {
+                                SetAccountData({...AccountData,name:e.target.value})
+                            }
+                        }                        
+                        />
                     </div>
                     <div>
                         <InputLabel id="e-mail" sx={{
@@ -80,8 +101,17 @@ export default function SignUp()
                         <TextField sx={{
                             background:DarkOrLight ?  "#8a2be2" : "#68a3eb",
                             borderRadius:"5px",
-                        }}  color={DarkOrLight ? "secondary" : "primary" } placeholder={t("e-mail")} type="email" label="e-mail" onChange={() => {        
-                        }}/>
+                        }}  
+                        color={DarkOrLight ? "secondary" : "primary" } 
+                        placeholder={t("e-mail")} 
+                        type="email" 
+                        label="e-mail" 
+                        value={AccountData.email}
+                        onChange={
+                            e => {
+                                SetAccountData({...AccountData,email:e.target.value})
+                            }
+                        }/>
                     </div>
                     <div>
                         <InputLabel id="password" sx={{
@@ -90,8 +120,17 @@ export default function SignUp()
                         <TextField sx={{
                             background:DarkOrLight ?  "#8a2be2" : "#68a3eb",
                             borderRadius:"5px",
-                        }} color={DarkOrLight ? "secondary" : "primary" } placeholder={t("password")} type="password" label="password" onChange={() => {        
-                        }}/>
+                        }} 
+                        color={DarkOrLight ? "secondary" : "primary" } 
+                        placeholder={t("password")} 
+                        type="password" 
+                        label="password" 
+                        value={AccountData.password}
+                        onChange={
+                            e => {
+                                SetAccountData({...AccountData,password:e.target.value})
+                            }
+                        }/>
                     </div>
                     <div>
                         <input type="submit" value={t("create a new account")} style={{
@@ -102,7 +141,15 @@ export default function SignUp()
                             fontSize:"15px",
                             outline:"none",
                             background:DarkOrLight ? "#8a2be2" : "#68a3eb"
-                        }}/>
+                        }} onClick={() => {
+                            dispatch(CreateAccount({
+                            auth,
+                            name:AccountData.name,
+                            email:AccountData.email,
+                            password:AccountData.password
+                        })
+                    )
+                    }}/>
                     </div>
                     <div style={{
                         borderTop:DarkOrLight ?  "1px #000 solid" : "1px #AAA solid",

@@ -1,3 +1,4 @@
+/* eslint-disable */
 export function EmailValidate(email)
 {
     let Wrongs = [
@@ -14,7 +15,7 @@ export function EmailValidate(email)
             id:4,error:"haven't domain"
         },
         {
-            id:5,run:false
+            id:5,status:false
         }
     ]
     const splitData = email.split("");
@@ -65,18 +66,16 @@ export function EmailValidate(email)
                     Rules.haveMailServerBeforeIt = true;
                     Locations.MailServer = item;
                 }
-                if(element === "." && item > Locations.MailServer)
+                if(element === "." && item === Locations.MailServer)
                 {
                     Rules.haveDotBeforeIt = true;
                     Locations.Dot = item;
                 }
-                if(element !== "" && item > Locations.Dot)
+                if(element !== "" && item === Locations.Dot)
                 {
                     Rules.haveDomainAfterDot = true;
                 }
-                console.log(element,item)
             })
-            console.log(Rules,Locations)
             if(
                 Rules.haveSymbolBeforeIt
                 && Rules.haveMailServerBeforeIt  
@@ -85,10 +84,34 @@ export function EmailValidate(email)
             )
             {
                 Wrongs[3].error = "";
-                Wrongs[4].run = true;
+                Wrongs[4].status = true;
             }
         }
-    })   
-    console.log(Wrongs)
+    }) 
+    const ReturnData = Wrongs.map((e,i) => {
+        if(i < 4)
+        {
+            if(Wrongs[i].error !== "")
+            {
+                return {
+                    id:i,
+                    type:"wrong",
+                    data:{
+                        massage:Wrongs[i].error
+                    }
+                }
+            }         
+        }
+        else{
+            return {
+                id:i,
+                type:"status",
+                data:{
+                    status:Wrongs[i].status
+                }
+            }
+        }
+    })
+    return ReturnData;
 }
 
