@@ -1,11 +1,11 @@
 @media (max-width:250px){
     .recaptcha {
-       transform: scale(0.1);
+       transform: scale(0.3);
     }
 }
 @media (max-width:300px) and (min-width:250px){
     .recaptcha {
-       transform: scale(0.2);
+       transform: scale(0.4);
     }
 }
 @media (max-width:400px) and (min-width:300px){
