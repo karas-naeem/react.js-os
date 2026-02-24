@@ -6,9 +6,12 @@ import '../Style/Scroll.css';
 import { useDispatch } from "react-redux";
 import { CreateAccount } from "../Data/Accounts/account";
 import { auth } from "../firebase";
+import Recaptcha from "./Recaptcha";
 
 export default function SignUpPhone()
 {
+    // Recaptcha
+    const [RecaptchaToken,SetRecaptchaToken] = useState(null)
     // Languages
     // eslint-disable-next-line 
     const [t,i18n] = useTranslation();
@@ -99,8 +102,8 @@ export default function SignUpPhone()
                                     width:"80%",
                                     background:DarkOrLight ?  "#8a2be2" : "#68a3eb",
                                     borderRadius:"5px",
-                                  }} c
-                                  olor={DarkOrLight ? "secondary" : "primary" } 
+                                  }} 
+                                  color={DarkOrLight ? "secondary" : "primary" } 
                                   placeholder={t("password")} type="password" 
                                   label="password"                             
                                   value={AccountData.password}
@@ -113,7 +116,8 @@ export default function SignUpPhone()
                             <div style={{
                                 padding:"5%"
                             }}>
-                                <input type="submit" value={t("create a new account")} style={{
+                                {
+                                    RecaptchaToken ? <input type="submit" value={t("create a new account")} style={{
                                     border:"0 solid #000",
                                     padding:"10px",
                                     color:"#FFF",
@@ -128,7 +132,14 @@ export default function SignUpPhone()
                                         email:AccountData.email,
                                         password:AccountData.password
                                     }))
-                                }}/>
+                                }}/> : <div style={{
+                                            width:"100%",
+                                            display:"flex",
+                                            justifyContent:"center"
+                                    }}><Recaptcha SetRecaptchaToken={SetRecaptchaToken}/>
+                                    </div> 
+                                                    
+                                }
                             </div>
                             <div style={{
                                 borderTop:DarkOrLight ?  "1px #000 solid" : "1px #AAA solid",
