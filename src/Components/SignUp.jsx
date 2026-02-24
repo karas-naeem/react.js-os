@@ -1,5 +1,5 @@
 import { Button, InputLabel, Stack, TextField } from "@mui/material";
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ResponsiveContext } from "../Context/Responsive/ResponsiveContext";
 import { LightDarkModeContext } from "../Context/LightDarkMode/LightDarkMode";
@@ -9,9 +9,14 @@ import SignUpPhone from "./SignUpPhone.jsx";
 import { auth } from "../firebase.js";
 import { CreateAccount } from "../Data/Accounts/account.js";
 import { useDispatch } from "react-redux";
+import Recaptcha from "./Recaptcha.jsx";
 
 export default function SignUp()
 {
+
+    // Recaptcha
+    const [RecaptchaToken,SetRecaptchaToken] = useState(null)
+
     //Languages
     // eslint-disable-next-line 
     const [t,i18n] = useTranslation();
@@ -134,7 +139,9 @@ export default function SignUp()
                         }/>
                     </div>
                     <div>
-                        <input type="submit" value={t("create a new account")} style={{
+                    {
+                      RecaptchaToken ?  
+                    <input type="submit" value={t("create a new account")} style={{
                             border:"0 solid #000",
                             padding:"10px",
                             color:"#FFF",
@@ -150,7 +157,13 @@ export default function SignUp()
                             password:AccountData.password
                         })
                     )
-                    }}/>
+                    }}/> : <div style={{
+                        width:"100%",
+                        display:"flex",
+                        justifyContent:"center"
+                    }}><Recaptcha SetRecaptchaToken={SetRecaptchaToken}/></div> 
+
+                    }
                     </div>
                     <div style={{
                         borderTop:DarkOrLight ?  "1px #000 solid" : "1px #AAA solid",
