@@ -1,5 +1,4 @@
 import ReCAPTCHA from "react-google-recaptcha";
-import '../Style/Recaptcha.css'
 
 export default function Recaptcha({SetRecaptchaToken})
 {
