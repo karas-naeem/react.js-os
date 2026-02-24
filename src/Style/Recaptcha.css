@@ -1,0 +1,15 @@
+@media (max-width:300px){
+    .recaptcha {
+       scale: 0.3;
+    }
+}
+@media (max-width:400px){
+    .recaptcha {
+       scale: 0.5;
+    }
+}
+@media (max-width:500px){
+    .recaptcha {
+       scale: 0.7;
+    }
+}
