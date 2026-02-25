@@ -1,4 +1,4 @@
-import {  Button,InputLabel, Stack, TextField } from "@mui/material";
+import {  Button,InputLabel, Stack, TextField, useMediaQuery } from "@mui/material";
 import { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { LightDarkModeContext } from "../Context/LightDarkMode/LightDarkMode";
@@ -10,6 +10,10 @@ import Recaptcha from "./Recaptcha";
 
 export default function SignUpPhone()
 {
+
+    // responsive
+    const VeryVerySmallPhones = useMediaQuery("(max-width:270px)");
+
     // Recaptcha
     const [RecaptchaToken,SetRecaptchaToken] = useState(null)
     // Languages
@@ -42,7 +46,7 @@ export default function SignUpPhone()
                 }}>
                     <div style={{
                         margin:"10%",
-                        fontSize:"140%",
+                        fontSize:VeryVerySmallPhones ? "108%" :"140%",
                     }}>
                         {
                             t("sign up with react.js os")

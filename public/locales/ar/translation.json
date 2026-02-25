@@ -9,5 +9,20 @@
     "create a new account":"انشاء حساب جديد",
     "sign up with google":"انشاء حساب ب جوجل",
     "sign up with github":"انشاء حساب ب جيت هاب",
-    "sign up with react.js os":"انشاء حساب مع رياكت جي اس او اس"
+    "sign up with react.js os":"انشاء حساب مع رياكت جي اس او اس",
+    "your name valid":"اسمك صحيح",
+    "your name invalid":"اسمك غير صحيح",
+    "your email valid":"البريد الالكتروني غير صحيح",
+    "your email invalid":"البريد الالكتروني صحيح",
+    "your password valid":"كلمة المرور صحيح",
+    "your password invalid":"كلمة المرور غير صحيح",
+    "haven't username":"لا تحتوي اسم المستخدم",
+    "haven't symbol":"لا تحتوي علي رمز(@)",
+    "haven't server mail":"لا تحتوي علي اسم حساب الخادم(مثل:gmail)",
+    "haven't domain or haven't correct domain":"لا تحتوي علي دومين او لا تحتوي علي دومين صحيح",
+    "haven't smallcase letter":"لا تحتوي علي حرف صغير",
+    "haven't uppercase letter":"لا تحتوي علي حرف كبير",    
+    "haven't number":"لا تحتوي علي رقم",    
+    "haven't special charcter":"لا تحتوي علي حرف من رموز",    
+    "less than 8 charcters":"الحروف و الرموز و الارقام اقل 8"
 }

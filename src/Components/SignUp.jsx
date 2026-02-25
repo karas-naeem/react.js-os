@@ -10,6 +10,7 @@ import { auth } from "../firebase.js";
 import { CreateAccount } from "../Data/Accounts/account.js";
 import { useDispatch } from "react-redux";
 import Recaptcha from "./Recaptcha.jsx";
+import InputWrongs from "./InputWrongs.jsx";
 
 export default function SignUp()
 {
@@ -33,10 +34,10 @@ export default function SignUp()
     const [AccountData,SetAccountData] = useState({
         name:"",
         email:"",
-        password:""
+        password:"",
+        writtenOn:"noAnyThing"
     });
     const dispatch = useDispatch();
-
 
     return (
         <>
@@ -95,7 +96,7 @@ export default function SignUp()
                         value={AccountData.name}
                         onChange={
                             e => {
-                                SetAccountData({...AccountData,name:e.target.value})
+                                SetAccountData({...AccountData,name:e.target.value,writtenOn:"name"})
                             }
                         }                        
                         />
@@ -115,7 +116,7 @@ export default function SignUp()
                         value={AccountData.email}
                         onChange={
                             e => {
-                                SetAccountData({...AccountData,email:e.target.value})
+                                SetAccountData({...AccountData,email:e.target.value,writtenOn:"email"})
                             }
                         }/>
                     </div>
@@ -134,7 +135,7 @@ export default function SignUp()
                         value={AccountData.password}
                         onChange={
                             e => {
-                                SetAccountData({...AccountData,password:e.target.value})
+                                SetAccountData({...AccountData,password:e.target.value,writtenOn:"password"})
                             }
                         }/>
                     </div>
@@ -224,6 +225,20 @@ export default function SignUp()
                         }}>
                             {t('sign up')}
                         </p>
+                       <ul style={{
+                            width:"49.5vw",
+                            display:"flex",
+                            flexDirection:"column",
+                            alignItems:"center",  
+                            direction:localStorage.getItem("lang") === "ar" || localStorage.getItem("lang") === "fa" ? "rtl" : "ltr"
+                        }}>
+                            <InputWrongs data={{
+                                name:AccountData.name,
+                                email:AccountData.email,
+                                password:AccountData.password,
+                                writtenOn:AccountData.writtenOn
+                            }}/>
+                        </ul>
                     </div>
                 </div>
             </Stack>
