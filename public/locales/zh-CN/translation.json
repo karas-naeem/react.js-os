@@ -8,5 +8,20 @@
     "create a new account":"创建一个新帐户",
     "sign up with google":"与谷歌注册",
     "sign up with github":"使用gitHub注册",
-    "sign up with react.js os":"注册 react.js 操作系统"
+    "sign up with react.js os":"注册 react.js 操作系统",
+    "your name valid":"你的名字有效",
+    "your name invalid":"你的名字无效",
+    "your email valid":"您的电子邮件有效",
+    "your email invalid":"您的电子邮件无效",
+    "your password valid":"您的密码有效",
+    "your password invalid":"您的密码无效",
+    "haven't username":"还没有用户名",
+    "haven't symbol":"没有符号",
+    "haven't server mail":"没有服务器邮件",
+    "haven't domain or haven't correct domain":"没有域名或没有正确的域名",
+    "haven't smallcase letter":"没有小写字母",
+    "haven't uppercase letter":"没有大写字母",    
+    "haven't number":"还没有号码",    
+    "haven't special charcter":"没有特殊角色",   
+    "less than 8 charcters":"少于8个字符"
 }

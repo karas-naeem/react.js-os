@@ -8,5 +8,20 @@
     "create a new account":"یک حساب کاربری جدید ایجاد کنید",
     "sign up with google":"ثبت نام با گوگل",
     "sign up with github":"ثبت نام با گیت‌ هاب",
-    "sign up with react.js os":"ثبت نام با react.js os"
+    "sign up with react.js os":"ثبت نام با react.js os",
+    "your name valid":"نام شما معتبر است",
+    "your name invalid":"نام شما نامعتبر است",
+    "your email valid":"ایمیل شما معتبر است",
+    "your email invalid":"ایمیل شما نامعتبر است",
+    "your password valid":"رمز عبور شما معتبر است",
+    "your password invalid":"رمز عبور شما نامعتبر است",
+    "haven't username":"نام کاربری ندارند",
+    "haven't symbol":"نماد ندارند",
+    "haven't server mail":"ایمیل سرور ندارم",
+    "haven't domain or haven't correct domain":"دامنه ندارید یا دامنه صحیحی ندارید",
+    "haven't smallcase letter":"حروف کوچک ندارم",
+    "haven't uppercase letter":"حروف بزرگ ندارد",    
+    "haven't number":"شماره ندارند",    
+    "haven't special charcter":"شخصیت خاصی ندارم",   
+    "less than 8 charcters":"کمتر از ۸ کاراکتر"
 }

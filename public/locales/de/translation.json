@@ -6,5 +6,20 @@
     "create a new account":"erstellen sie ein neues konto",
     "sign up with google":"melde dich bei google an",
     "sign up with github":"melde dich bei github an",
-    "sign up with react.js os":"meld je aan bij react.js os"
+    "sign up with react.js os":"meld je aan bij react.js os",
+    "your name valid":"hr name ist gültig",
+    "your name invalid":"ihr name ist ungültig",
+    "your email valid":"ihre e-mail-Adresse ist gültig",
+    "your email invalid":"ihre e-Mail-Adresse ist ungültig",
+    "your password valid":"ihr passwort ist gültig",
+    "your password invalid":"ihr passwort ist ungültig",
+    "haven't username":"habe keinen benutzernamen",
+    "haven't symbol":"habe kein symbol",
+    "haven't server mail":"ich habe keinen e-mail-server",
+    "haven't domain or haven't correct domain":"sie haben keine oder keine korrekte domain",
+    "haven't smallcase letter":"haben keinen kleinbuchstaben",
+    "haven't uppercase letter":"haben keinen großbuchstaben",    
+    "haven't number":"habe keine nummer",    
+    "haven't special charcter":"haben keine besonderen eigenschaften",   
+    "less than 8 charcters":"weniger als 8 zeichen"
 }

@@ -226,10 +226,12 @@ export default function SignUp()
                             {t('sign up')}
                         </p>
                        <ul style={{
-                            width:"49.5vw",
+                            fontSize:isLaptop ? "1rem" : "0.8rem",
+                            width:"clamp(110%,50%,25%)",
                             display:"flex",
                             flexDirection:"column",
                             alignItems:"center",  
+                            listStyle:"none",
                             direction:localStorage.getItem("lang") === "ar" || localStorage.getItem("lang") === "fa" ? "rtl" : "ltr"
                         }}>
                             <InputWrongs data={{

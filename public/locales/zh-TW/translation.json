@@ -8,5 +8,20 @@
     "create a new account":"建立一個新帳戶",
     "sign up with google":"使用谷歌帳號註冊",
     "sign up with github":"使用gitHub註冊",
-    "sign up with react.js os":"註冊 react.js 作業系統"
+    "sign up with react.js os":"註冊 react.js 作業系統",
+    "your name valid":"你的名字有效",
+    "your name invalid":"你的名字無效",
+    "your email valid":"您的電子郵件有效",
+    "your email invalid":"您的電子郵件無效",
+    "your password valid":"您的密碼有效",
+    "your password invalid":"您的密碼無效",
+    "haven't username":"還沒有用戶名",
+    "haven't symbol":"沒有符號",
+    "haven't server mail":"沒有伺服器郵件",
+    "haven't domain or haven't correct domain":"沒有域名或沒有正確的域名",
+    "haven't smallcase letter":"沒有小寫字母",
+    "haven't uppercase letter":"沒有大寫字母",    
+    "haven't number":"還沒有號碼",    
+    "haven't special charcter":"沒有特殊角色",   
+    "less than 8 charcters":"少於8個字符"
 }

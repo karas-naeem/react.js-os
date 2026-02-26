@@ -8,5 +8,20 @@
     "create a new account":"Создать новую учетную запись",
     "sign up with google":"Зарегистрируйтесь через google",
     "sign up with github":"Зарегистрироваться через github",
-    "sign up with react.js os":"зарегистрируйтесь с помощью react.js os"
+    "sign up with react.js os":"зарегистрируйтесь с помощью react.js os",
+    "your name valid":"ваше имя действительно",
+    "your name invalid":"ваше имя недействительно",
+    "your email valid":"ваш адрес электронной почты действителен",
+    "your email invalid":"ваш адрес электронной почты недействителен",
+    "your password valid":"ваш пароль действителен",
+    "your password invalid":"ваш пароль недействителен",
+    "haven't username":"имя пользователя отсутствует",
+    "haven't symbol":"нет символа",
+    "haven't server mail":"нет сервера почты",
+    "haven't domain or haven't correct domain":"отсутствует домен или отсутствует правильный домен",
+    "haven't smallcase letter":"не имею письма строчными буквами",
+    "haven't uppercase letter":"нет заглавной буквы",    
+    "haven't number":"нет номера",    
+    "haven't special charcter":"не обладает особым характером",   
+    "less than 8 charcters":"менее 8 символов"
 }
