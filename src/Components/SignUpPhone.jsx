@@ -7,12 +7,15 @@ import { useDispatch } from "react-redux";
 import { CreateAccount } from "../Data/Accounts/account";
 import { auth } from "../firebase";
 import Recaptcha from "./Recaptcha";
+import InputWrongs from "./InputWrongs";
 
 export default function SignUpPhone()
 {
 
     // responsive
     const VeryVerySmallPhones = useMediaQuery("(max-width:270px)");
+    const LargePhones = useMediaQuery("(min-width:400px)");
+
 
     // Recaptcha
     const [RecaptchaToken,SetRecaptchaToken] = useState(null)
@@ -29,7 +32,8 @@ export default function SignUpPhone()
     const [AccountData,SetAccountData] = useState({
         name:"",
         email:"",
-        password:""
+        password:"",
+        writtenOn:"noAnyThing"
     });
     const dispatch = useDispatch();
         return (
@@ -54,12 +58,30 @@ export default function SignUpPhone()
                     </div>
                     <div style={{
                         width:"90%",
-                        height:"100vh",
+                        height:"calc(fit-content + 100px)",
                         borderRadius:"5px",
                         background:DarkOrLight ? "#0f0f0f" : "#fff",
                     }}>
                         
                         <div>
+                            <ul style={{
+                                    fontFamily:"0.5rem",
+                                    width:localStorage.getItem("lang") === "ar" || localStorage.getItem("lang") === "fa"  ? LargePhones ? "55%" : "60%" : "100%",
+                                    fontSize:VeryVerySmallPhones ? "60%" : LargePhones ? "3vw" : "75%",
+                                    display:"flex",
+                                    flexDirection:"column",
+                                    alignItems:"center",  
+                                    listStyle:"none",
+                                    marginLeft:VeryVerySmallPhones ? "-75%" : "",
+                                    direction:localStorage.getItem("lang") === "ar" || localStorage.getItem("lang") === "fa" ? "rtl" : "ltr"
+                                }}>
+                                    <InputWrongs data={{
+                                        name:AccountData.name,
+                                        email:AccountData.email,
+                                        password:AccountData.password,
+                                        writtenOn:AccountData.writtenOn
+                                    }}/>
+                                </ul>
                             <InputLabel id="name" sx={{
                                 color:DarkOrLight ? "#FFF" : "#666",
                             }}>{t("name")}:</InputLabel>
@@ -74,7 +96,7 @@ export default function SignUpPhone()
                             value={AccountData.name}
                             onChange={
                                 e => {
-                                    SetAccountData({...AccountData,name:e.target.value})
+                                    SetAccountData({...AccountData,name:e.target.value,writtenOn:"name"})
                                 }
                             }
                             />
@@ -94,7 +116,7 @@ export default function SignUpPhone()
                                      value={AccountData.email}
                                      onChange={
                                      e => {
-                                        SetAccountData({...AccountData,email:e.target.value})
+                                        SetAccountData({...AccountData,email:e.target.value,writtenOn:"email"})
                                      }
                                 }/>
                             </div>
@@ -113,7 +135,7 @@ export default function SignUpPhone()
                                   value={AccountData.password}
                                   onChange={
                                       e => {
-                                        SetAccountData({...AccountData,password:e.target.value})
+                                        SetAccountData({...AccountData,password:e.target.value,writtenOn:"password"})
                                   }
                             }/>
                             </div>
