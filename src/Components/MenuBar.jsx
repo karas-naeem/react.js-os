@@ -70,7 +70,7 @@ export default function MenuBar()
                             }}/>
                         }
                     </Stack>
-                    <Stack sx={{
+                    <Stack flexDirection={localStorage.getItem("lang") === "ar" || localStorage.getItem("lang") === "fa" ? "row" : "row-reverse"} sx={{
                         width:"fit-content",
                         border:DarkOrLight ? "1px #FFF solid" : "1px #000 solid",
                         color:DarkOrLight ? "#FFF" : "#000",

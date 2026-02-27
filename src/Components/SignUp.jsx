@@ -6,17 +6,17 @@ import { LightDarkModeContext } from "../Context/LightDarkMode/LightDarkMode";
 import '../Style/Scroll.css';
 import '../Style/Selection.css'
 import SignUpPhone from "./SignUpPhone.jsx";
-import { auth } from "../firebase.js";
-import { CreateAccount } from "../Data/Accounts/account.js";
 import { useDispatch } from "react-redux";
 import Recaptcha from "./Recaptcha.jsx";
 import InputWrongs from "./InputWrongs.jsx";
+import { SignUpThunkFunction } from "../Data/Accounts/account.js";
+import { auth } from "../firebase.js";
 
 export default function SignUp()
 {
 
     // Recaptcha
-    const [RecaptchaToken,SetRecaptchaToken] = useState(null)
+    const [RecaptchaToken,SetRecaptchaToken] = useState("L")
 
     //Languages
     // eslint-disable-next-line 
@@ -151,12 +151,12 @@ export default function SignUp()
                             outline:"none",
                             background:DarkOrLight ? "#8a2be2" : "#68a3eb"
                         }} onClick={() => {
-                            dispatch(CreateAccount({
-                            auth,
-                            name:AccountData.name,
-                            email:AccountData.email,
-                            password:AccountData.password
-                        })
+                            dispatch(SignUpThunkFunction({
+                                auth,
+                                name:AccountData.name,
+                                email:AccountData.email,
+                                password:AccountData.password
+                            })
                     )
                     }}/> : <div style={{
                         width:"100%",
