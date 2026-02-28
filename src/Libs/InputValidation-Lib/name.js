@@ -8,7 +8,7 @@ let wrongs = [];
         status:false,
     };
 
-    const NameRegax = /\w{2,30}/;
+    const NameRegax = /^[\p{L}]{2,30}$/u;
     if(!NameRegax.test(name))
     {
         wrongs.push({
