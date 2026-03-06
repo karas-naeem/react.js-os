@@ -21,5 +21,11 @@
     "haven't uppercase letter":"haben keinen großbuchstaben",    
     "haven't number":"habe keine nummer",    
     "haven't special charcter":"haben keine besonderen eigenschaften",   
-    "less than 8 charcters":"weniger als 8 zeichen"
+    "less than 8 charcters":"weniger als 8 zeichen",
+    "verification success":"verifizierungserfolg",
+    "back to home":"zurück nach hause",
+    "verification failed":"die verifizierung ist fehlgeschlagen",
+    "why failed?":"warum ist es gescheitert?",
+    "you often open this page two times or change a small thigs in URL":"sie öffnen diese Seite oft zweimal oder ändern kleinigkeiten in der URL",
+    "your URL are'nt right":"ihre URLs sind falsch"
 }

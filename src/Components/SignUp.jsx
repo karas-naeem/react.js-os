@@ -1,26 +1,32 @@
-import { Button, InputLabel, Stack, TextField } from "@mui/material";
-import { useContext, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { ResponsiveContext } from "../Context/Responsive/ResponsiveContext";
+// functions and hooks
+import React, { lazy, useContext, useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { t } from "i18next";
+// contexts
 import { LightDarkModeContext } from "../Context/LightDarkMode/LightDarkMode";
+// styles
 import '../Style/Scroll.css';
 import '../Style/Selection.css'
-import SignUpPhone from "./SignUpPhone.jsx";
-import { useDispatch } from "react-redux";
-import Recaptcha from "./Recaptcha.jsx";
-import InputWrongs from "./InputWrongs.jsx";
+// dispatch 
 import { SignUpThunkFunction } from "../Data/Accounts/account.js";
+// data
 import { auth } from "../firebase.js";
+// components
+import { Button, InputLabel, Stack, TextField } from "@mui/material";
+import { ResponsiveContext } from "../Context/Responsive/ResponsiveContext";
+// lazy components
+const Recaptcha = lazy(() => import("./Recaptcha.jsx"));
+const Loading = lazy(() => import("./Loading"));
+const InputWrongs = lazy(() => import("./InputWrongs.jsx"));
+const SignUpPhone = lazy(() => import("./SignUpPhone.jsx"));
 
+
+/* eslint-disable react-hooks/exhaustive-deps */
 export default function SignUp()
 {
 
     // Recaptcha
-    const [RecaptchaToken,SetRecaptchaToken] = useState("L")
-
-    //Languages
-    // eslint-disable-next-line 
-    const [t,i18n] = useTranslation();
+    const [RecaptchaToken,SetRecaptchaToken] = useState("l")
     
     //Dark & Light Mode
 
@@ -39,8 +45,12 @@ export default function SignUp()
     });
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        return () => document.title = "react.js os - " + t("sign up");
+    },[localStorage.getItem("lang")]);
+
     return (
-        <>
+        <React.Suspense fallback={<Loading/>}>
           {
             isTablet ? 
               <Stack height="100vh" flexDirection={
@@ -246,6 +256,6 @@ export default function SignUp()
             </Stack>
             : <SignUpPhone/>
            } 
-        </>
+        </React.Suspense>
     );
 }

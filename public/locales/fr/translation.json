@@ -22,5 +22,11 @@
     "haven't uppercase letter":"n'ont pas de lettre majuscule",    
     "haven't number":"je n'ai pas de numéro",    
     "haven't special charcter":"n'ont pas de personnage spécial",   
-    "less than 8 charcters":"moins de 8 caractères"
+    "less than 8 charcters":"moins de 8 caractères",
+    "verification success":"réussite de la vérification",
+    "back to home":"retour à la maison",
+    "verification failed":"la vérification a échoué",
+    "why failed?":"pourquoi a-t-il échoué ?",
+    "you often open this page two times or change a small thigs in URL":"la page est ouverte deux fois ou le lien URL est légèrement modifié",
+    "your URL are'nt right":"vos URL ne sont pas correctes"
 }

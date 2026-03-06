@@ -6,6 +6,10 @@ export const SignUpThunkFunction = createAsyncThunk("accounts/signup",async (act
     console.log(action)
     if(NameValidate(action.name).status.status && EmailValidate(action.email).status.status && PassswordValidate(action.password).status.status )
     {
+        const actionCodeSettings = {
+            url:"http://localhost:3000/verification-success",
+            handleCodeInApp:true
+        };
         const userCredential = await createUserWithEmailAndPassword(
             action.auth,
             action.email,
@@ -13,7 +17,7 @@ export const SignUpThunkFunction = createAsyncThunk("accounts/signup",async (act
         )
         const user = userCredential.user;
         await updateProfile(user,{displayName:action.name})
-        await sendEmailVerification(user)
+        await sendEmailVerification(user,actionCodeSettings)
     }
 }) 
 const accountSlice = createSlice({

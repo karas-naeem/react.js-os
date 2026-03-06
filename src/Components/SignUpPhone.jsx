@@ -1,13 +1,15 @@
 import {  Button,InputLabel, Stack, TextField, useMediaQuery } from "@mui/material";
-import { useContext, useState } from "react";
+import React, { lazy, useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { LightDarkModeContext } from "../Context/LightDarkMode/LightDarkMode";
 import '../Style/Scroll.css';
 import { useDispatch } from "react-redux";
 import { CreateAccount } from "../Data/Accounts/account";
 import { auth } from "../firebase";
-import Recaptcha from "./Recaptcha";
-import InputWrongs from "./InputWrongs";
+// lazy components
+const Recaptcha = lazy(() => import("./Recaptcha.jsx"));
+const Loading = lazy(() => import("./Loading"));
+const InputWrongs = lazy(() => import("./InputWrongs.jsx"));
 
 export default function SignUpPhone()
 {
@@ -36,9 +38,10 @@ export default function SignUpPhone()
         writtenOn:"noAnyThing"
     });
     const dispatch = useDispatch();
-        return (
 
-            <>
+    return (
+
+            <React.Suspense fallback={<Loading/>}>
                <Stack flexDirection="column" alignItems="center" color={DarkOrLight ? "#fff" : "#000"}  sx={{
                 width:"70%",
                     height:"65vh",
@@ -215,6 +218,6 @@ export default function SignUpPhone()
                     </div>
                 </div>
             </Stack>
-        </>
+        </React.Suspense>
     );
 }

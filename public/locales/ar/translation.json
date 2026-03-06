@@ -24,5 +24,11 @@
     "haven't uppercase letter":"لا تحتوي علي حرف كبير",    
     "haven't number":"لا تحتوي علي رقم",    
     "haven't special charcter":"لا تحتوي علي حرف من رموز",    
-    "less than 8 charcters":"الحروف و الرموز و الارقام اقل من 8"
+    "less than 8 charcters":"الحروف و الرموز و الارقام اقل من 8",
+    "verification success":"نجح التحقق",
+    "verification failed":"فشل التحقق",
+    "back to home":"الرجوع الي الصفحه الرئيسية",
+    "why failed?":"لماذا فشلت؟",
+    "you often open this page two times or change a small thigs in URL":"انت غالبا فتحت هذه الصفحه مرتين او غيرت شيئ بسيط في URL",
+    "your URL are'nt right":"URL خطا"
 }

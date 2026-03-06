@@ -23,5 +23,11 @@
     "haven't uppercase letter":"沒有大寫字母",    
     "haven't number":"還沒有號碼",    
     "haven't special charcter":"沒有特殊角色",   
-    "less than 8 charcters":"少於8個字符"
+    "less than 8 charcters":"少於8個字符",
+    "verification success":"驗證成功",
+    "back to home":"回到家",
+    "verification failed":"驗證失敗",
+    "why failed?":"為什麼失敗了？",
+    "you often open this page two times or change a small thigs in URL":"您經常兩次打開此頁面或更改 URL 中的一些小設定。",
+    "your URL are'nt right":"您的網址不正確。"
 }

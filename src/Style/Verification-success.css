@@ -1,0 +1,27 @@
+[class^="FailedVerfication"]{
+    position: relative;   
+}
+[class^=FailedVerfication]{
+    cursor: help;
+}
+.FailedVerficationData:hover::after{
+    content: "you often open this two times or change a small thigs in URL";
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 20px;
+    width: fit-content;
+    padding: 5px;
+    pointer-events: none;
+}
+
+.FailedVerficationNoData:hover::after{
+    content: "you often open this two times or change a small thigs in URL";
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 20px;
+    width: fit-content;
+    padding: 5px;
+    pointer-events: none;
+}

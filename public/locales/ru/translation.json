@@ -23,5 +23,11 @@
     "haven't uppercase letter":"нет заглавной буквы",    
     "haven't number":"нет номера",    
     "haven't special charcter":"не обладает особым характером",   
-    "less than 8 charcters":"менее 8 символов"
+    "less than 8 charcters":"менее 8 символов",
+    "verification success":"успешная проверка",
+    "back to home":"вернуться домой",
+    "verification failed":"проверка не удалась",
+    "why failed?":"почему не удалось?",
+    "you often open this page two times or change a small thigs in URL":"Вы часто открываете эту страницу дважды или меняете небольшие параметры в URL-адресе",
+    "your URL are'nt right":"Ваши URL-адреса неверны"
 }

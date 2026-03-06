@@ -23,5 +23,11 @@
     "haven't uppercase letter":"没有大写字母",    
     "haven't number":"还没有号码",    
     "haven't special charcter":"没有特殊角色",   
-    "less than 8 charcters":"少于8个字符"
+    "less than 8 charcters":"少于8个字符",
+    "verification success":"验证成功",
+    "back to home":"回到家",
+    "verification failed":"验证失败",
+    "why failed?":"为什么失败了？",
+    "you often open this page two times or change a small thigs in URL":"您经常两次打开此页面或更改 URL 中的一些小设置。",
+    "your URL are'nt right":"您的网址不正确。"
 }

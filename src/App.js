@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 import HomePage from './Components/HomePage';
 import { ResponsiveContext } from './Context/Responsive/ResponsiveContext';
 import "./Style/Selection.css"
+import VerificationSuccess from './Components/Verification-Success';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         
         localStorage.setItem("LightDarkMode",DarkOrLight);
         const Theme = DarkOrLight ? DarkTheme : LightTheme;
+        
         // Langs
         const [lang,SetLang] = useState(() => {
           if(localStorage.getItem("lang"))
@@ -85,6 +87,7 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage/>}/>
               <Route path='/signup' element={<SignUp/>}/>
+              <Route path='/verification-success' element={<VerificationSuccess/>}/>
               <Route path='/login' element={<>login</>}/>
             </Routes>
            </div>

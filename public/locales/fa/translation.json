@@ -23,5 +23,11 @@
     "haven't uppercase letter":"حروف بزرگ ندارد",    
     "haven't number":"شماره ندارند",    
     "haven't special charcter":"شخصیت خاصی ندارم",   
-    "less than 8 charcters":"کمتر از ۸ کاراکتر"
+    "less than 8 charcters":"کمتر از ۸ کاراکتر",
+    "verification success":"موفقیت در تأیید",
+    "back to home":"بازگشت به خانه",
+    "verification failed":"تأیید ناموفق بود",
+    "why failed?":"چرا شکست خورد؟",
+    "you often open this page two times or change a small thigs in URL":"شما اغلب این صفحه را دو بار باز می‌کنید یا یک تغییر کوچک در آدرس اینترنتی (URL) ایجاد می‌کنید",
+    "your URL are'nt right":"آدرس اینترنتی شما درست نیست"
 }
