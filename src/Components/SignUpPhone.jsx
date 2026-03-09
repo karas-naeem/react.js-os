@@ -183,7 +183,7 @@ export default function SignUpPhone()
                                 <Button onClick={() => {
                                     dispatch(SignUpOrLogInWithProviderThunkFunction({
                                         auth,
-                                        provider: new GoogleAuthProvider()
+                                        provider:GoogleAuthProvider
                                     }))
                                 }} variant="contained" sx={{
                                     background:DarkOrLight ? "#8a2be2" : "#68a3eb",
@@ -213,7 +213,7 @@ export default function SignUpPhone()
                                     }} onClick={() => {
                                         dispatch(SignUpOrLogInWithProviderThunkFunction({
                                             auth,
-                                            provider: new GithubAuthProvider()
+                                            provider:GithubAuthProvider
                                         }))
                                     }}>
                                         {t("sign up with github")} 
