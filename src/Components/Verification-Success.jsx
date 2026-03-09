@@ -3,12 +3,12 @@ import { applyActionCode, getAuth } from "firebase/auth";
 import React, { lazy, useContext, useEffect, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
-import { ResponsiveContext } from "../Context/Responsive/ResponsiveContext";
+import { ResponsiveContext } from "../Contexts/Responsive/ResponsiveContext";
 import { GppBad, InfoOutline } from "@mui/icons-material";
 import "../Style/Verification-success.css";
-import { LightDarkModeContext } from "../Context/LightDarkMode/LightDarkMode";
+import { LightDarkModeContext } from "../Contexts/LightDarkMode/LightDarkMode";
 import { t } from "i18next";
-import { WhyFailed } from "./Styled-Components/Verification-Succes/why-failed";
+import { WhyFailed } from "./Styled-Components/Verification-Success/why-failed.styles";
 const Loading = lazy(() => import("./Loading"));
 
 

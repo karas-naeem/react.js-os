@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 import {DarkMode, LightMode} from "@mui/icons-material"
 import {  useContext, } from "react";
 import MenuBarPhone from "./MenuBarPhone";
-import { LightDarkModeContext } from "../Context/LightDarkMode/LightDarkMode";
-import { Langs } from "../Context/Langs/Langs";
+import { LightDarkModeContext } from "../Contexts/LightDarkMode/LightDarkMode";
+import { Langs } from "../Contexts/Langs/Langs";
 export default function MenuBar()
 {
     

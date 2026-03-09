@@ -1,6 +1,6 @@
 import React, { lazy, useContext, useEffect } from "react";
 import { lineAnimate } from "../Animations/HomePage";
-import { LightDarkModeContext } from "../Context/LightDarkMode/LightDarkMode";
+import { LightDarkModeContext } from "../Contexts/LightDarkMode/LightDarkMode";
 const Loading = lazy(() => import("./Loading"));
 
 export default function HomePage()

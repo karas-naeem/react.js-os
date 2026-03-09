@@ -1,2 +1,2 @@
 # react.js os
-react.js is an small os made react js have real things os should contain it
+react.js os is an small os made by react js but have real things os should contain it

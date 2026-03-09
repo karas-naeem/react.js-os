@@ -2,15 +2,15 @@ import './App.css';
 import {Route, Routes} from "react-router-dom";
 import MainBar from './Components/MenuBar';
 import SignUp from './Components/SignUp';
-import { LightDarkModeContext } from './Context/LightDarkMode/LightDarkMode';
-import { Langs } from './Context/Langs/Langs';
+import { LightDarkModeContext } from './Contexts/LightDarkMode/LightDarkMode';
+import { Langs } from './Contexts/Langs/Langs';
 import { useMediaQuery } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { DarkTheme } from './Themes/Mui/dark';
 import { LightTheme } from './Themes/Mui/light';
 import { useTranslation } from 'react-i18next';
 import HomePage from './Components/HomePage';
-import { ResponsiveContext } from './Context/Responsive/ResponsiveContext';
+import { ResponsiveContext } from './Contexts/Responsive/ResponsiveContext';
 import "./Style/Selection.css"
 import VerificationSuccess from './Components/Verification-Success';
 

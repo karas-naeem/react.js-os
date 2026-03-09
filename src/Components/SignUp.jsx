@@ -3,17 +3,18 @@ import React, { lazy, useContext, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { t } from "i18next";
 // contexts
-import { LightDarkModeContext } from "../Context/LightDarkMode/LightDarkMode";
+import { LightDarkModeContext } from "../Contexts/LightDarkMode/LightDarkMode";
 // styles
 import '../Style/Scroll.css';
 import '../Style/Selection.css'
 // dispatch 
-import { SignUpThunkFunction } from "../Data/Accounts/account.js";
+import { SignUpThunkFunction, SignUpOrLogInWithProviderThunkFunction } from "../Data/Accounts/account.js";
 // data
 import { auth } from "../firebase.js";
 // components
 import { Button, InputLabel, Stack, TextField } from "@mui/material";
-import { ResponsiveContext } from "../Context/Responsive/ResponsiveContext";
+import { ResponsiveContext } from "../Contexts/Responsive/ResponsiveContext";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 // lazy components
 const Recaptcha = lazy(() => import("./Recaptcha.jsx"));
 const Loading = lazy(() => import("./Loading"));
@@ -26,7 +27,7 @@ export default function SignUp()
 {
 
     // Recaptcha
-    const [RecaptchaToken,SetRecaptchaToken] = useState("l")
+    const [RecaptchaToken,SetRecaptchaToken] = useState(null)
     
     //Dark & Light Mode
 
@@ -185,7 +186,12 @@ export default function SignUp()
                         alignItems:"center",
                         justifyContent:"center"
                     }}>
-                        <Button variant="contained" sx={{
+                        <Button  onClick={() => {
+                                dispatch(SignUpOrLogInWithProviderThunkFunction({
+                                    auth,
+                                    provider: new GoogleAuthProvider()
+                                }))
+                            }} variant="contained" sx={{
                             background:DarkOrLight ? "#8a2be2" : "#68a3eb",
                             textTransform:"capitalize"
                             ,gap:"5px",
@@ -207,7 +213,12 @@ export default function SignUp()
                             textTransform:"capitalize"
                             ,gap:"5px",
                             width:isLaptop ? "25vw" : "35vw"
-                        }}>
+                        }} onClick={() => {
+                                dispatch(SignUpOrLogInWithProviderThunkFunction({
+                                        auth,
+                                        provider: new GithubAuthProvider()
+                                    }))
+                                }}>
                             {t("sign up with github")} 
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style={{
                                 width:"40px"

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { LightDarkModeContext } from '../Context/LightDarkMode/LightDarkMode';
+import { LightDarkModeContext } from '../Contexts/LightDarkMode/LightDarkMode';
 import { CircularProgress } from '@mui/material';
 
 export default function Loading()

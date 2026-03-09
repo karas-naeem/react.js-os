@@ -2,8 +2,8 @@ import { LightMode,DarkMode,Menu } from "@mui/icons-material";
 import { Link,Stack, MenuItem,FormControl,InputLabel,Select } from "@mui/material";
 import { useContext, useState } from "react";
 import { Link as ReactRouterLink } from "react-router-dom";
-import { LightDarkModeContext } from "../Context/LightDarkMode/LightDarkMode";
-import { Langs } from "../Context/Langs/Langs";
+import { LightDarkModeContext } from "../Contexts/LightDarkMode/LightDarkMode";
+import { Langs } from "../Contexts/Langs/Langs";
 import { useTranslation } from "react-i18next";
 
 export default function MenuBarPhone()
