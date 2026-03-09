@@ -29,7 +29,7 @@ export const SignUpThunkFunction = createAsyncThunk("accounts/signup",async (act
 }) 
 
 export const SignUpOrLogInWithProviderThunkFunction = createAsyncThunk("accounts/signup-or-login-with-provider",async (action,thunkTools) => {
-    const provider = action.provider;
+    const provider = new action.provider();
     provider.setCustomParameters({
         prompt:"select_account"
     })
